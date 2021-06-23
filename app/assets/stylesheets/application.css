@@ -31,6 +31,8 @@ time, mark, audio, video {
     padding: 0;
     border: 0;
     vertical-align: baseline;
+    text-decoration: none;
+    color: #2F5D62;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 

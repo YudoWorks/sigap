@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @naturalDisasters = NaturalDisaster.all
+    @natural_disasters = NaturalDisaster.all
     render('home/index')
   end
 end
