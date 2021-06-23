@@ -74,3 +74,28 @@ h1, h2, h3, h4, h5, h6{
 p {
     font-family: 'Merriweather', serif;
 }
+
+.nav-top {
+    background-color: #8ca4a7;
+    position: sticky;
+    top: 0;
+}
+
+.nav-top h1{
+    margin: 0 auto;
+    padding: 0.25em;
+    width: 300px;
+    color: white;
+    font-size: 4em;
+    text-align: center;
+    text-shadow: -5px 5px red;
+}
+
+.nav-top h1:hover{
+    color: white;
+    text-shadow: none;
+    position: relative;
+    top: 5px;
+    left: -5px;
+    cursor: pointer;
+}
