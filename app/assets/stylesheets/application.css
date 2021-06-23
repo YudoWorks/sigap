@@ -99,3 +99,14 @@ p {
     left: -5px;
     cursor: pointer;
 }
+
+.btn {
+    width: 300px;
+    margin: 1em auto;
+    padding: 0.125em;
+    border: 0.125em solid red;
+    font-size: 2em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
