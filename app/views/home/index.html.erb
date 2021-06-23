@@ -1,0 +1,7 @@
+<% @naturalDisasters.each do | naturalDisaster | %>
+    <div class="naturalDisaster">
+        <h1><%= naturalDisaster.name %></h1>
+        <h2><%= naturalDisaster.location %></h2>
+        <p><%= naturalDisaster.desc %></p>
+    </div>
+<% end %>
