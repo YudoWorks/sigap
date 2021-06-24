@@ -8,8 +8,28 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Roboto&display=swap" rel="stylesheet">
+  </head>
+  <div class="nav-top">
+    <ul>
+        <li>
+          <%= link_to("SIGAP","/") %>
+        <li>
+        <% if session[:user_id] %>
+          <a><%= User.find_by(id: session[:user_id]).name %></a>
+          <li>
+            <%= link_to("Log Out","/logout", {method:"post"}) %>
+          <li>
+        <% else %>
+          <li>
+            <%= link_to("Log In","/login") %>
+          <li>
+        <% end %>
+    </ul>
+  </div>
   <body>
     <%= yield %>
   </body>
