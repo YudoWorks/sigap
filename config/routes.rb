@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   get 'signin' => "users#signin_form"
   post 'login' => "users#login"
   post 'signin' => "users#signin"
+  post 'logout' => "users#logout"
 end

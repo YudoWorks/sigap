@@ -1,14 +1,14 @@
-<div class="btn">
-    <%= link_to("Report Natural Disaster", "/natural_disasters/report-form") %>
-</div>
+<% if session[:user_id] %>
+    <div class="btn">
+        <%= link_to("Report Natural Disaster", "/natural_disasters/report-form") %>
+    </div>
+<% end %>
 <% @natural_disasters.each do | natural_disaster | %>
-    <% if session[:user_id] %>
         <%= link_to("/natural_disasters/#{natural_disaster.id}/show") do %>
-            <div class="naturalDisaster">
+            <div class="naturalDisaster-box">
                 <h1><%= natural_disaster.name %></h1>
                 <h2><%= natural_disaster.location %></h2>
                 <p><%= natural_disaster.desc %></p>
             </div>
         <% end %>
-    <% end %>
 <% end %>

@@ -14,9 +14,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Roboto&display=swap" rel="stylesheet">
   </head>
   <div class="nav-top">
-    <%= link_to("/") do %>
-      <h1>SIGAP</h1>
-    <% end %>
+    <ul>
+        <li>
+          <%= link_to("SIGAP","/") %>
+        <li>
+        <% if session[:user_id] %>
+          <a><%= User.find_by(id: session[:user_id]).name %></a>
+          <li>
+            <%= link_to("Log Out","/logout", {method:"post"}) %>
+          <li>
+        <% else %>
+          <li>
+            <%= link_to("Log In","/login") %>
+          <li>
+        <% end %>
+    </ul>
   </div>
   <body>
     <%= yield %>
