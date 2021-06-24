@@ -6,4 +6,9 @@ Rails.application.routes.draw do
   get 'natural_disasters/:id/show' => 'natural_disasters#show'
   get 'natural_disasters/report-form' => 'natural_disasters#report-form'
   post 'natural_disasters/report' => 'natural_disasters#report'
+  
+  get 'login' => "users#login_form"
+  get 'signin' => "users#signin_form"
+  post 'login' => "users#login"
+  post 'signin' => "users#signin"
 end
