@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   post 'login' => "users#login"
   post 'signin' => "users#signin"
   post 'logout' => "users#logout"
+
+  post 'join/:naturalDisasterId/by/:userId' => "volunteers#join"
 end
