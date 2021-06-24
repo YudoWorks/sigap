@@ -83,14 +83,12 @@ p {
 
 .nav-top ul li{
     display: inline-block;
+    padding: 1em 1em;
 }
 
 .nav-top ul li a{
-    padding: 0 1em;
-    width: 300px;
     color: white;
     font-size: 4em;
-    text-align: center;
     text-shadow: -5px 5px red;
     font-family: 'Roboto', sans-serif;
 }
@@ -109,6 +107,7 @@ p {
     margin: 1em auto;
     padding: 0.125em;
     border: 0.125em solid red;
+    border-radius: 0.5ch;
     font-size: 2em;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
