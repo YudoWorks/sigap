@@ -81,17 +81,21 @@ p {
     top: 0;
 }
 
-.nav-top h1{
-    margin: 0 auto;
-    padding: 0.25em;
+.nav-top ul li{
+    display: inline-block;
+}
+
+.nav-top ul li a{
+    padding: 0 1em;
     width: 300px;
     color: white;
     font-size: 4em;
     text-align: center;
     text-shadow: -5px 5px red;
+    font-family: 'Roboto', sans-serif;
 }
 
-.nav-top h1:hover{
+.nav-top a:hover{
     color: white;
     text-shadow: none;
     position: relative;

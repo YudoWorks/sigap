@@ -35,4 +35,9 @@ class UsersController < ApplicationController
       render("users/login_form")
     end
   end
+
+  def logout
+    session[:user_id] = FALSE
+    redirect_to('/')
+  end
 end
