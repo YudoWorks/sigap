@@ -1,7 +1,9 @@
 <% if session[:user_id] %>
-    <div class="btn">
-        <%= link_to("Report Natural Disaster", "/natural_disasters/report-form") %>
-    </div>
+    <% if User.find_by(id: session[:user_id]).isAdmin %>
+        <div class="btn">
+            <%= link_to("Report Natural Disaster", "/natural_disasters/report-form") %>
+        </div>
+    <% end %>
 <% end %>
 <% @natural_disasters.each do | natural_disaster | %>
         <%= link_to("/natural_disasters/#{natural_disaster.id}/show") do %>
