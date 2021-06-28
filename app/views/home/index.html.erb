@@ -1,6 +1,6 @@
 <div class="container">
     <% if session[:user_id] %>
-        <% if User.find_by(id: session[:user_id]).isAdmin %>
+        <% if @currentUser.isAdmin %>
             <div class="btn">
                 <%= link_to("Report Natural Disaster", "/natural_disasters/report-form") %>
             </div>
