@@ -1,4 +1,6 @@
 class VolunteersController < ApplicationController
+    before_action :authorized, only: [:join]
+
     def join
         @volunteer = Volunteer.new(
             userId: params[:userId],

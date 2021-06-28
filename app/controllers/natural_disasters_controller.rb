@@ -1,4 +1,12 @@
 class NaturalDisastersController < ApplicationController
+  before_action :authorized_admin, only:[:report_form, :report]
+
+  def authorized_admin
+    if @currentUser.isAdmin == FALSE
+      redirect_to('/')
+    end
+  end
+
   def show
     @natural_disaster = NaturalDisaster.find_by(id: params[:id])
   end

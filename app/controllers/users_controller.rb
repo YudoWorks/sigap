@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_action :not_authorized, only:[:signin_form, :sign, :login_form, :login]
+  before_action :authorized, only:[:logout]
+
   def signin_form
     @user = User.new
   end
