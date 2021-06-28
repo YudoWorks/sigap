@@ -1,5 +1,5 @@
 class VolunteersController < ApplicationController
-    before_action :not_authorized, only: [:join]
+    before_action :authorized, only: [:join]
 
     def join
         @volunteer = Volunteer.new(
