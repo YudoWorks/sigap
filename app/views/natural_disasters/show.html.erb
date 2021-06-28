@@ -15,9 +15,11 @@
           <% end %>
         </select>
       </div>
-      <div class="form-row">
-        <input class="btn-submit" type="submit" value="Volunt !">
-      </div>
+      <% if @currentUser %>
+        <div class="form-row">
+          <input class="btn-submit" type="submit" value="Volunt !">
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>
