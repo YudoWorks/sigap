@@ -75,6 +75,24 @@ p {
     font-family: 'Merriweather', serif;
 }
 
+.container {
+    width: 70%;
+    margin: 0 auto;
+    padding: 2em;
+}
+
+.box {
+    padding: 1em;
+    margin: 1em auto;
+    background-color: #A7C4BC;
+    border-radius: 1ch;
+}
+
+.form-row{
+    display: block;
+    margin: 1em 0;
+}
+
 .nav-top {
     background-color: #8ca4a7;
     position: sticky;
@@ -112,4 +130,29 @@ p {
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     text-align: center;
+}
+
+.btn-submit {
+    background-color: white;
+    border-radius: 0.25ch ;
+    border: 1px solid black;
+    font-size: 1em;
+    text-transform: capitalize;
+}
+
+.span-text a {
+    color: #2F5D62;
+    font-weight: bold;
+}
+
+.form-alert {
+    color: red;
+    margin: 0.5em 0;
+}
+
+.flash {
+    background-color: #FFC947;
+    text-align: center;
+    padding: 1em 0;
+    text-transform: capitalize;
 }

@@ -1,12 +1,23 @@
-<h1><%= @natural_disaster.name %></h1>
-<h2><%= @natural_disaster.location %></h2>
-<p><%= @natural_disaster.desc %></p>
-<%= form_tag("/join/#{@natural_disaster.id}/by/#{session[:user_id]}") do %>
-  <label for="volunteer">Choose a Job:</label>
-  <select id="jobId" name="jobId">
-    <% Job.all.each do |job| %>
-      <option value=<%= job.id %>><%= job.name %></option>
+<div class="container">
+  <div class="box">
+    <h1><%= @natural_disaster.name %></h1>
+    <h2><%= @natural_disaster.location %></h2>
+    <p><%= @natural_disaster.desc %></p>
+  </div>
+  <div class="box">
+    <h1>Volunt</h1>
+    <%= form_tag("/join/#{@natural_disaster.id}/by/#{session[:user_id]}") do %>
+      <div class="form-row">
+        <label for="volunteer">Choose a Job:</label>
+        <select id="jobId" name="jobId">
+          <% Job.all.each do |job| %>
+            <option value=<%= job.id %>><%= job.name %></option>
+          <% end %>
+        </select>
+      </div>
+      <div class="form-row">
+        <input class="btn-submit" type="submit" value="Volunt !">
+      </div>
     <% end %>
-  </select>
-  <input type="submit" value="Volunt !">
-<% end %>
+  </div>
+</div>
