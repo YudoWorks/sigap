@@ -38,6 +38,7 @@ class UsersController < ApplicationController
 
   def logout
     session[:user_id] = FALSE
+    flash[:notice] = "User successfully log out"
     redirect_to('/')
   end
 end

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'home/index'
   
   get 'natural_disasters/:id/show' => 'natural_disasters#show'
-  get 'natural_disasters/report-form' => 'natural_disasters#report-form'
+  get 'natural_disasters/report-form' => 'natural_disasters#report_form'
   post 'natural_disasters/report' => 'natural_disasters#report'
   
   get 'login' => "users#login_form"

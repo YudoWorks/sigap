@@ -6,5 +6,7 @@ class VolunteersController < ApplicationController
             jobId: params[:jobId])
         
         @volunteer.save
+        flash[:notice] = "Successfully Volunteer"
+        redirect_to("/natural_disasters/#{params[:naturalDisasterId]}/show")
     end
 end
