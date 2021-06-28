@@ -1,16 +1,18 @@
-<% if session[:user_id] %>
-    <% if User.find_by(id: session[:user_id]).isAdmin %>
-        <div class="btn">
-            <%= link_to("Report Natural Disaster", "/natural_disasters/report-form") %>
-        </div>
-    <% end %>
-<% end %>
-<% @natural_disasters.each do | natural_disaster | %>
-        <%= link_to("/natural_disasters/#{natural_disaster.id}/show") do %>
-            <div class="naturalDisaster-box">
-                <h1><%= natural_disaster.name %></h1>
-                <h2><%= natural_disaster.location %></h2>
-                <p><%= natural_disaster.desc %></p>
+<div class="container">
+    <% if session[:user_id] %>
+        <% if User.find_by(id: session[:user_id]).isAdmin %>
+            <div class="btn">
+                <%= link_to("Report Natural Disaster", "/natural_disasters/report-form") %>
             </div>
         <% end %>
-<% end %>
+    <% end %>
+    <% @natural_disasters.each do | natural_disaster | %>
+            <%= link_to("/natural_disasters/#{natural_disaster.id}/show") do %>
+                <div class="box">
+                    <h1><%= natural_disaster.name %></h1>
+                    <h2><%= natural_disaster.location %></h2>
+                    <p><%= natural_disaster.desc %></p>
+                </div>
+            <% end %>
+    <% end %>
+</div>

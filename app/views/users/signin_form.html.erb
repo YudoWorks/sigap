@@ -1,23 +1,25 @@
 <div class="container">
-    <h1>Register</h1>
-    <% @user.errors.full_messages.each do | message | %>
-        <p class="form-alert"> <%= message %> <p>
-    <% end %>
-    <%= form_tag("/signin") do %>
-    <div class="form-row">
-        <label>Name</label>
-        <input name="name">
+    <div class="box">
+        <h1>Register</h1>
+        <% @user.errors.full_messages.each do | message | %>
+            <p class="form-alert"> <%= message %> <p>
+        <% end %>
+        <%= form_tag("/signin") do %>
+        <div class="form-row">
+            <label>Name</label>
+            <input name="name">
+        </div>
+        <div class="form-row">
+            <label>Email</label>
+            <input name="email">  
+        </div>    
+        <div class="form-row">
+            <label>Password</label>
+            <input name="password" type="password">
+        </div>
+        <div class="form-row">
+            <input class="btn-submit" type="submit" value="create">
+        </div>
+        <% end %>
     </div>
-    <div class="form-row">
-        <label>Email</label>
-        <input name="email">  
-    </div>    
-    <div class="form-row">
-        <label>Password</label>
-        <input name="password" type="password">
-    </div>
-    <div class="form-row">
-        <input class="btn-submit" type="submit" value="create">
-    </div>
-    <% end %>
 </div>

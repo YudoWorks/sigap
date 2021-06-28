@@ -1,23 +1,25 @@
 <div class="container">
-    <h1>Report Natural Disaster</h1>
-    <% @natural_disaster.errors.full_messages.each do | message | %>
-        <p  class="form-alert" ><%= message %></p>
-    <% end %>
-    <%= form_tag("/natural_disasters/report") do %>
-        <div class="form-row">
-            <label>Name</label>
-            <input name="name">
-        </div>
-        <div class="form-row">
-            <label>Location</label>
-            <input name="location">
-        </div>
-        <div class="form-row">
-            <label>Description</label>
-            <textarea></textarea>
-        </div>
-        <div class="form-row">
-            <input class="btn-submit" type="submit" value="report">
-        </div>
-    <% end %>
+    <div class="box">
+        <h1>Report Natural Disaster</h1>
+        <% @natural_disaster.errors.full_messages.each do | message | %>
+            <p  class="form-alert" ><%= message %></p>
+        <% end %>
+        <%= form_tag("/natural_disasters/report") do %>
+            <div class="form-row">
+                <label>Name</label>
+                <input name="name">
+            </div>
+            <div class="form-row">
+                <label>Location</label>
+                <input name="location">
+            </div>
+            <div class="form-row">
+                <label>Description</label>
+                <textarea></textarea>
+            </div>
+            <div class="form-row">
+                <input class="btn-submit" type="submit" value="report">
+            </div>
+        <% end %>
+    </div>
 </div>

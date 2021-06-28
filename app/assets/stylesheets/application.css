@@ -76,9 +76,14 @@ p {
 }
 
 .container {
+    width: 70%;
+    margin: 0 auto;
     padding: 2em;
-    width: 50%;
-    margin: 2em auto;
+}
+
+.box {
+    padding: 1em;
+    margin: 1em auto;
     background-color: #A7C4BC;
     border-radius: 1ch;
 }
