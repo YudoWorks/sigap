@@ -11,6 +11,7 @@ class UsersController < ApplicationController
       name: params[:name], 
       password: params[:password], 
       email: params[:email],
+      image: "default_image.jpg",
       isAdmin: FALSE
     )
 
@@ -43,5 +44,8 @@ class UsersController < ApplicationController
     session[:user_id] = FALSE
     flash[:notice] = "User successfully log out"
     redirect_to('/')
+  end
+
+  def show
   end
 end

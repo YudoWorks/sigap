@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   
   get 'login' => "users#login_form"
   get 'signin' => "users#signin_form"
+  get 'users/:id' => "users#show"
   post 'login' => "users#login"
   post 'signin' => "users#signin"
   post 'logout' => "users#logout"
