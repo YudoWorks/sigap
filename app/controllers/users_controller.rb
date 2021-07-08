@@ -48,4 +48,19 @@ class UsersController < ApplicationController
 
   def show
   end
+
+  def edit_form
+    @user = User.new
+  end
+
+  def update
+    @user = User.find_by(id: params[:id])
+    @user.name = params[:name]
+
+    if @user.save
+      redirect_to("/users/#{@user.id}")
+    else
+      render("users/edit_form")
+    end
+  end
 end

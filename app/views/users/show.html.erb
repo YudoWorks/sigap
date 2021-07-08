@@ -3,5 +3,10 @@
         <h1>User Profile</h1>
         <h2><%= @currentUser.name %></h2>
         <img src=<%= "/user_images/#{@currentUser.image}" %> class="user-image">
+        <div class="form-row">
+            <%= link_to("/users/#{@currentUser.id}/edit") do %>
+                Edit user profile <i class="fas fa-edit"></i>
+            <% end %>
+        </div>
     </div>
 </div>
