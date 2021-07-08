@@ -11,6 +11,7 @@ class UsersController < ApplicationController
       name: params[:name], 
       password: params[:password], 
       email: params[:email],
+      image: "default_image.jpg",
       isAdmin: FALSE
     )
 
@@ -43,5 +44,24 @@ class UsersController < ApplicationController
     session[:user_id] = FALSE
     flash[:notice] = "User successfully log out"
     redirect_to('/')
+  end
+
+  def show
+  end
+
+  def edit_form
+    @user = User.find_by(id: params[:id])
+  end
+
+  def update
+    @user = User.find_by(id: params[:id])
+    @user.name = params[:name]
+
+    if @user.save
+      flash[:notice] = "User successfully edited"
+      redirect_to("/users/#{@user.id}")
+    else
+      render("users/edit_form")
+    end
   end
 end

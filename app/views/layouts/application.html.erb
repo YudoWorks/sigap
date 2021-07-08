@@ -12,6 +12,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Roboto&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/8c7c9433ec.js" crossorigin="anonymous"></script>
   </head>
   <div class="nav-top">
     <ul>
@@ -19,14 +21,18 @@
           <%= link_to("SIGAP","/") %>
         <li>
         <% if @currentUser %>
-          <a><%= @currentUser.name %></a>
+          <li>
+            <%= link_to("/users/#{@currentUser.id}") do %>
+              <%= @currentUser.name %>
+            <% end %>
+          </li>
           <li>
             <%= link_to("Log Out","/logout", {method:"post"}) %>
-          <li>
+          </li>
         <% else %>
           <li>
             <%= link_to("Log In","/login") %>
-          <li>
+          </li>
         <% end %>
     </ul>
     <% if flash[:notice] %>

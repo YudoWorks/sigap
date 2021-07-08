@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="box">
+        <h1>Edit Profile</h1>
+        <% @user.errors.full_messages.each do | message | %>
+            <p class="form-alert"> <%= message %> <p>
+        <% end %>
+        <%= form_tag("/users/#{@user.id}/update") do %>
+        <div class="form-row">
+            <label>Name</label>
+            <input name="name" value=<%= @user.name %>>
+        </div>
+        <div class="form-row">
+            <label>Image</label>
+            <img src=<%= "/user_images/#{@user.image}" %>>
+        </div>
+        <div class="form-row">
+            <input class="btn-submit" type="submit" value="save">
+        </div>
+        <% end %>
+    </div>
+</div>
