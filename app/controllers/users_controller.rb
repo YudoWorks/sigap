@@ -50,7 +50,7 @@ class UsersController < ApplicationController
   end
 
   def edit_form
-    @user = User.new
+    @user = User.find_by(id: params[:id])
   end
 
   def update
@@ -58,6 +58,7 @@ class UsersController < ApplicationController
     @user.name = params[:name]
 
     if @user.save
+      flash[:notice] = "User successfully edited"
       redirect_to("/users/#{@user.id}")
     else
       render("users/edit_form")
